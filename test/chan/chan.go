@@ -55,12 +55,12 @@ func testChannelComplete() {
 func goRoutineD(ch chan int, i int) {
 	time.Sleep(time.Second * 3)
 	ch <- i
-	close(ch) // 关闭通道
+	close(ch) // 关闭通道，若是不关闭通道，则会一直阻塞在default分支
 }
 func goRoutineE(chs chan string, i string) {
 	time.Sleep(time.Second * 3)
 	chs <- i
-	close(chs) // 关闭通道
+	close(chs) // 关闭通道，若是不关闭通道，则会一直阻塞在default分支
 }
 
 func testChanSelect() {
