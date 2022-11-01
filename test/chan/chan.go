@@ -8,7 +8,8 @@ import (
 
 func main() {
 	//testForrangeChan()
-	testChannelComplete()
+	//testChannelComplete()
+	testChanSelect()
 }
 
 func testForrangeChan() {
@@ -49,4 +50,53 @@ func testChannelComplete() {
 	for i := range r {
 		fmt.Println(i)
 	}
+}
+
+func goRoutineD(ch chan int, i int) {
+	time.Sleep(time.Second * 3)
+	ch <- i
+	close(ch) // 关闭通道
+}
+func goRoutineE(chs chan string, i string) {
+	time.Sleep(time.Second * 3)
+	chs <- i
+	close(chs) // 关闭通道
+}
+
+func testChanSelect() {
+	ch := make(chan int, 5)
+	chs := make(chan string, 5)
+
+	go goRoutineD(ch, 5)
+	go goRoutineE(chs, "ok")
+	exitChFlag := false
+	exitChsFlag := false
+	for {
+		select {
+		case msg, ok := <-ch:
+			if !ok {
+				ch = make(chan int)
+				fmt.Println("ch通道已关闭")
+				exitChFlag = true
+			} else {
+				fmt.Println(" received the data ", msg)
+			}
+		case msgs, ok := <-chs:
+			if !ok {
+				chs = make(chan string)
+				fmt.Println("chs通道已关闭")
+				exitChsFlag = true
+			} else {
+				fmt.Println(" received the data ", msgs)
+			}
+		default:
+			fmt.Println("channel中没有数据")
+			time.Sleep(1 * time.Second)
+		}
+		if exitChFlag && exitChsFlag {
+			fmt.Println("跳出循环")
+			break
+		}
+	}
+
 }
