@@ -18,6 +18,9 @@ func main() {
 	//generateRemoveNthFromEnd()
 	//generateGenerateParenthesis()
 	//generateMergeKLists()
+	//generateNextPermutation() // 下一个排列
+	//generateLongestValidParentheses() // 最长有效括号
+	generateSearch() // 寻找螺旋数组
 }
 
 func generateAddTwoNumsCondition() {
@@ -124,4 +127,18 @@ func generateTree() *TreeNode {
 			},
 		},
 	}
+}
+
+func generateNextPermutation() {
+	nums := []int{3, 2, 1}
+	NextPermutation(nums)
+	fmt.Println(nums)
+}
+
+func generateLongestValidParentheses() {
+	fmt.Println(LongestValidParentheses("(()"))
+}
+
+func generateSearch() {
+	fmt.Println(Search([]int{4, 5, 6, 7, 0, 1, 2}, 0))
 }
