@@ -11,7 +11,9 @@ func main() {
 	//generateLengthOfLongestSubstringCondition()
 	//generateLongestPalindromeCondition()
 	//generateMaxArea()
-	generateThreeSums()
+	//generateThreeSums()
+	//generateMaxDepth() // 二叉树最大深度
+	generateMinDepth() // 二叉树最小深度
 }
 
 func generateAddTwoNumsCondition() {
@@ -40,4 +42,36 @@ func generateMaxArea() {
 
 func generateThreeSums() {
 	fmt.Println(ThreeSum([]int{-1, 0, 1, 2, -1, -4}))
+}
+
+func generateMaxDepth() {
+	fmt.Println(MaxDepth(generateTree()))
+}
+
+func generateMinDepth() {
+	fmt.Println(MinDepth(generateTree()))
+}
+
+func generateTree() *TreeNode {
+	return &TreeNode{
+		Val: 3,
+		Left: &TreeNode{
+			Val:   9,
+			Left:  nil,
+			Right: nil,
+		},
+		Right: &TreeNode{
+			Val: 20,
+			Left: &TreeNode{
+				Val:   15,
+				Left:  nil,
+				Right: nil,
+			},
+			Right: &TreeNode{
+				Val:   7,
+				Left:  nil,
+				Right: nil,
+			},
+		},
+	}
 }
