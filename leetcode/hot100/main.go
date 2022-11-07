@@ -13,7 +13,11 @@ func main() {
 	//generateMaxArea()
 	//generateThreeSums()
 	//generateMaxDepth() // 二叉树最大深度
-	generateMinDepth() // 二叉树最小深度
+	//generateMinDepth() // 二叉树最小深度
+	//generateLetterCombinations()
+	//generateRemoveNthFromEnd()
+	//generateGenerateParenthesis()
+	//generateMergeKLists()
 }
 
 func generateAddTwoNumsCondition() {
@@ -50,6 +54,52 @@ func generateMaxDepth() {
 
 func generateMinDepth() {
 	fmt.Println(MinDepth(generateTree()))
+}
+
+func generateLetterCombinations() {
+	fmt.Println(LetterCombinations("8"))
+}
+
+func generateRemoveNthFromEnd() {
+	l1 := &ListNode{Val: 1}
+	l1.Next = &ListNode{Val: 2}
+	l1.Next.Next = &ListNode{Val: 3}
+	l1.Next.Next.Next = &ListNode{Val: 4}
+	l1.Next.Next.Next.Next = &ListNode{Val: 5}
+	res := RemoveNthFromEnd(l1, 2)
+	fmt.Println(res.Val, res.Next.Val, res.Next.Next.Val, res.Next.Next.Next.Val)
+}
+
+func generateGenerateParenthesis() {
+	fmt.Println(GenerateParenthesis(3))
+}
+
+func generateMergeKLists() {
+	l1 := &ListNode{Val: 1}
+	l1.Next = &ListNode{Val: 4}
+	l1.Next.Next = &ListNode{Val: 5}
+
+	l2 := &ListNode{Val: 1}
+	l2.Next = &ListNode{Val: 3}
+	l2.Next.Next = &ListNode{Val: 4}
+
+	l3 := &ListNode{Val: 2}
+	l3.Next = &ListNode{Val: 6}
+	var lists []*ListNode
+	lists = append(lists, l1)
+	lists = append(lists, l2)
+	lists = append(lists, l3)
+	res := MergeKLists(lists)
+	fmt.Println(getListVal(res))
+}
+
+func getListVal(list *ListNode) []int {
+	var res []int
+	for list != nil {
+		res = append(res, list.Val)
+		list = list.Next
+	}
+	return res
 }
 
 func generateTree() *TreeNode {
