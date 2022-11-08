@@ -20,7 +20,8 @@ func main() {
 	//generateMergeKLists()
 	//generateNextPermutation() // 下一个排列
 	//generateLongestValidParentheses() // 最长有效括号
-	generateSearch() // 寻找螺旋数组
+	//generateSearch() // 寻找螺旋数组
+	generateSearchRange() // 在排序数组中查找元素的第一个和最后一个位置
 }
 
 func generateAddTwoNumsCondition() {
@@ -141,4 +142,8 @@ func generateLongestValidParentheses() {
 
 func generateSearch() {
 	fmt.Println(Search([]int{4, 5, 6, 7, 0, 1, 2}, 0))
+}
+
+func generateSearchRange() {
+	fmt.Println(SearchRange([]int{5, 7, 7, 8, 8, 10}, 6))
 }
