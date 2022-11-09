@@ -19,17 +19,26 @@ candidates 中的 同一个 数字可以 无限制重复被选取 。如果至�
 输入: candidates = [2], target = 1
 输出: []
 */
-func CombinationSum(candidates []int, target int) [][]int {
-	return nil
-}
-
-func combinationSumDfs(target, idx int, candidates []int) {
-	if idx == len(candidates) {
-		return
+func CombinationSum(candidates []int, target int) (combinationSumArr [][]int) {
+	var comb []int
+	var combinationSumDfs func(target, idx int)
+	combinationSumDfs = func(target, idx int) {
+		if idx == len(candidates) {
+			return
+		}
+		if target == 0 {
+			combinationSumArr = append(combinationSumArr, append([]int{}, comb...))
+			return
+		}
+		// 跳过此节点
+		combinationSumDfs(target, idx+1)
+		// 选择当前数
+		if target-candidates[idx] >= 0 {
+			comb = append(comb, candidates[idx])
+			combinationSumDfs(target-candidates[idx], idx)
+			comb = comb[:len(comb)-1]
+		}
 	}
-	if target == 0 {
-		append(combinationSumArr)
-	}
+	combinationSumDfs(target, 0)
+	return
 }
-
-var combinationSumArr [][]int
