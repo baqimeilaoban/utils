@@ -22,7 +22,8 @@ func main() {
 	//generateLongestValidParentheses() // 最长有效括号
 	//generateSearch() // 寻找螺旋数组
 	//generateSearchRange() // 在排序数组中查找元素的第一个和最后一个位置
-	generateCombinationSum() // 组合总和
+	//generateCombinationSum() // 组合总和
+	generateTrap() // 接雨水
 }
 
 func generateAddTwoNumsCondition() {
@@ -151,4 +152,8 @@ func generateSearchRange() {
 
 func generateCombinationSum() {
 	fmt.Println(CombinationSum([]int{2, 3, 5}, 8))
+}
+
+func generateTrap() {
+	fmt.Println(Trap([]int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}))
 }
