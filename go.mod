@@ -1,3 +1,3 @@
 module github.com/baqimeilaoban/utils
 
-go 1.18
+go 1.17
