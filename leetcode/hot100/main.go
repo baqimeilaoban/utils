@@ -24,7 +24,8 @@ func main() {
 	//generateSearchRange() // 在排序数组中查找元素的第一个和最后一个位置
 	//generateCombinationSum() // 组合总和
 	//generateTrap() // 接雨水
-	generateRotate() // 旋转图像
+	//generateRotate() // 旋转图像
+	generateGroupAnagrams() // 字母异位分词
 }
 
 func generateAddTwoNumsCondition() {
@@ -163,4 +164,8 @@ func generateRotate() {
 	matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 	Rotate(matrix)
 	fmt.Println(matrix)
+}
+
+func generateGroupAnagrams() {
+	fmt.Println(GroupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"}))
 }
