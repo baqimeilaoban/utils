@@ -17,3 +17,8 @@ func max(x, y int) int {
 	}
 	return y
 }
+
+func swap(nums []int, x, y int) []int {
+	nums[x], nums[y] = nums[y], nums[x]
+	return nums
+}

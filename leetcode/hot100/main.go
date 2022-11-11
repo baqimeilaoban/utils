@@ -23,7 +23,8 @@ func main() {
 	//generateSearch() // 寻找螺旋数组
 	//generateSearchRange() // 在排序数组中查找元素的第一个和最后一个位置
 	//generateCombinationSum() // 组合总和
-	generateTrap() // 接雨水
+	//generateTrap() // 接雨水
+	generatePermute()
 }
 
 func generateAddTwoNumsCondition() {
@@ -156,4 +157,8 @@ func generateCombinationSum() {
 
 func generateTrap() {
 	fmt.Println(Trap([]int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}))
+}
+
+func generatePermute() {
+	fmt.Println(Permute([]int{1, 2, 3}))
 }
