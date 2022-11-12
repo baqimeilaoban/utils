@@ -24,7 +24,8 @@ func main() {
 	//generateSearchRange() // 在排序数组中查找元素的第一个和最后一个位置
 	//generateCombinationSum() // 组合总和
 	//generateTrap() // 接雨水
-	generatePermute()
+	//generatePermute() // 全排列
+	generateMaxSubArray() // 最大子数组和
 }
 
 func generateAddTwoNumsCondition() {
@@ -161,4 +162,8 @@ func generateTrap() {
 
 func generatePermute() {
 	fmt.Println(Permute([]int{1, 2, 3}))
+}
+
+func generateMaxSubArray() {
+	fmt.Println(MaxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 }
