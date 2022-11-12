@@ -22,3 +22,10 @@ func swap(nums []int, x, y int) []int {
 	nums[x], nums[y] = nums[y], nums[x]
 	return nums
 }
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
