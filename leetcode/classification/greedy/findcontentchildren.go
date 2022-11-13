@@ -22,7 +22,7 @@ import "sort"
 你拥有的饼干数量和尺寸都足以让所有孩子满足。
 所以你应该输出2.
 */
-// 贪心策略：大饼干先喂给胃口大的孩子
+// 贪心策略：小饼干先喂给胃口小的孩子
 func findContentChildren(g []int, s []int) int {
 	// 先从小到大排序
 	sort.Ints(g)
