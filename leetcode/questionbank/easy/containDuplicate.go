@@ -1,5 +1,7 @@
 package easy
 
+import "sort"
+
 // containsDuplicate 存在重复元素
 /*
 给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。
@@ -18,13 +20,18 @@ func containsDuplicate(nums []int) bool {
 	for _, v := range nums {
 		_, ok := mp[v]
 		if ok {
-			mp[v]++
+			return true
 		} else {
 			mp[v] = 1
 		}
 	}
-	for _, v := range mp {
-		if v >= 2 {
+	return false
+}
+
+func containsDuplicateOpt(nums []int) bool {
+	sort.Ints(nums)
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] == nums[i+1] {
 			return true
 		}
 	}
