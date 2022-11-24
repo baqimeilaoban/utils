@@ -72,3 +72,18 @@ func TestUnit_rotateImage(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_reverseString(t *testing.T) {
+	convey.Convey("TestUnit_reverseString", t, func() {
+		convey.Convey("test-01", func() {
+			s := []byte{'h', 'e', 'l', 'l', 'o'}
+			reverseString(s)
+			convey.So(reflect.DeepEqual(s, []byte{'o', 'l', 'l', 'e', 'h'}), convey.ShouldBeTrue)
+		})
+		convey.Convey("test-02", func() {
+			s := []byte{'H','a','n','n','a','h'}
+			reverseString(s)
+			convey.So(reflect.DeepEqual(s, []byte{'h','a','n','n','a','H'}), convey.ShouldBeTrue)
+		})
+	})
+}
