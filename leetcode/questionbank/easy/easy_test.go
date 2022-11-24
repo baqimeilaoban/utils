@@ -62,3 +62,13 @@ func TestUnit_isValidSudoku(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_rotateImage(t *testing.T) {
+	convey.Convey("TestUnit_rotateImage", t, func() {
+		convey.Convey("test-01", func() {
+			matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+			rotateImage(matrix)
+			convey.So(reflect.DeepEqual(matrix, [][]int{{7, 4, 1}, {8, 5, 2}, {9, 6, 3}}), convey.ShouldBeTrue)
+		})
+	})
+}
