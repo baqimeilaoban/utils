@@ -81,9 +81,34 @@ func TestUnit_reverseString(t *testing.T) {
 			convey.So(reflect.DeepEqual(s, []byte{'o', 'l', 'l', 'e', 'h'}), convey.ShouldBeTrue)
 		})
 		convey.Convey("test-02", func() {
-			s := []byte{'H','a','n','n','a','h'}
+			s := []byte{'H', 'a', 'n', 'n', 'a', 'h'}
 			reverseString(s)
-			convey.So(reflect.DeepEqual(s, []byte{'h','a','n','n','a','H'}), convey.ShouldBeTrue)
+			convey.So(reflect.DeepEqual(s, []byte{'h', 'a', 'n', 'n', 'a', 'H'}), convey.ShouldBeTrue)
+		})
+	})
+}
+
+func TestUnit_reverse(t *testing.T) {
+	convey.Convey("TestUnit_reverse", t, func() {
+		convey.Convey("test-01", func() {
+			x := 123
+			res := reverse(x)
+			convey.So(res, convey.ShouldEqual, 321)
+		})
+		convey.Convey("test-02", func() {
+			x := -123
+			res := reverse(x)
+			convey.So(res, convey.ShouldEqual, -321)
+		})
+		convey.Convey("test-03", func() {
+			x := 120
+			res := reverse(x)
+			convey.So(res, convey.ShouldEqual, 21)
+		})
+		convey.Convey("test-04", func() {
+			x := 0
+			res := reverse(x)
+			convey.So(res, convey.ShouldEqual, 0)
 		})
 	})
 }
