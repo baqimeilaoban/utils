@@ -112,3 +112,24 @@ func TestUnit_reverse(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_firstUniqChar(t *testing.T) {
+	convey.Convey("TestUnit_firstUniqChar", t, func() {
+		convey.Convey("test-01", func() {
+			s := "leetcode"
+			res := firstUniqChar(s)
+			convey.So(res, convey.ShouldEqual, 0)
+		})
+		convey.Convey("test-02", func() {
+			s := "loveleetcode"
+			res := firstUniqChar(s)
+			convey.So(res, convey.ShouldEqual, 2)
+		})
+		convey.Convey("test-03", func() {
+			s := "aabb"
+			res := firstUniqChar(s)
+			convey.So(res, convey.ShouldEqual, -1)
+		})
+	})
+
+}
