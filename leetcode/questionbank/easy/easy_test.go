@@ -133,3 +133,20 @@ func TestUnit_firstUniqChar(t *testing.T) {
 	})
 
 }
+
+func TestUnit_isAnagram(t *testing.T) {
+	convey.Convey("TestUnit_isAnagram", t, func() {
+		convey.Convey("test-01", func() {
+			s := "anagram"
+			t := "nagaram"
+			res := isAnagram(s, t)
+			convey.So(res, convey.ShouldBeTrue)
+		})
+		convey.Convey("test-02", func() {
+			s := "rat"
+			t := "car"
+			res := isAnagram(s, t)
+			convey.So(res, convey.ShouldBeFalse)
+		})
+	})
+}
