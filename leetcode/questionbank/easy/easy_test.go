@@ -170,3 +170,23 @@ func TestUnit_isPalindrome(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_myAtoi(t *testing.T) {
+	convey.Convey("TestUnit_myAtoi", t, func() {
+		convey.Convey("test-01", func() {
+			s := "9223372036854775808"
+			res := myAtoi(s)
+			convey.So(res, convey.ShouldEqual, 2147483647)
+		})
+		convey.Convey("test-02", func() {
+			s := "    -42"
+			res := myAtoi(s)
+			convey.So(res, convey.ShouldEqual, -42)
+		})
+		convey.Convey("test-03", func() {
+			s := "4193 with words"
+			res := myAtoi(s)
+			convey.So(res, convey.ShouldEqual, 4193)
+		})
+	})
+}
