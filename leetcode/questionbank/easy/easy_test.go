@@ -150,3 +150,23 @@ func TestUnit_isAnagram(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_isPalindrome(t *testing.T) {
+	convey.Convey("TestUnit_isPalindrome", t, func() {
+		convey.Convey("test-01", func() {
+			s := "A man, a plan, a canal: Panama"
+			res := isPalindrome(s)
+			convey.ShouldEqual(res, true)
+		})
+		convey.Convey("test-02", func() {
+			s := "race a car"
+			res := isPalindrome(s)
+			convey.ShouldEqual(res, false)
+		})
+		convey.Convey("test-03", func() {
+			s := "OP"
+			res := isPalindrome(s)
+			convey.ShouldEqual(res, false)
+		})
+	})
+}
