@@ -215,3 +215,13 @@ func TestUnit_countAndSay(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_longestCommonPrefix(t *testing.T) {
+	convey.Convey("TestUnit_longestCommonPrefix", t, func() {
+		convey.Convey("test-01", func() {
+			s := []string{"flower", "flow", "flight"}
+			res := longestCommonPrefix(s)
+			convey.So(res, convey.ShouldEqual, "fl")
+		})
+	})
+}
