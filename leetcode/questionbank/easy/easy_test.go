@@ -199,9 +199,19 @@ func TestUnit_strStr(t *testing.T) {
 			convey.So(res, convey.ShouldEqual, 0)
 		})
 		convey.Convey("test-02", func() {
-			haystack, needle := "mississippi","issip"
+			haystack, needle := "mississippi", "issip"
 			res := strStr(haystack, needle)
 			convey.So(res, convey.ShouldEqual, 4)
+		})
+	})
+}
+
+func TestUnit_countAndSay(t *testing.T) {
+	convey.Convey("TestUnit_countAndSay", t, func() {
+		convey.Convey("test-01", func() {
+			n := 4
+			res := countAndSay(n)
+			convey.So(res, convey.ShouldEqual, "1211")
 		})
 	})
 }
