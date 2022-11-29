@@ -190,3 +190,18 @@ func TestUnit_myAtoi(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_strStr(t *testing.T) {
+	convey.Convey("TestUnit_strStr", t, func() {
+		convey.Convey("test-01", func() {
+			haystack, needle := "sadbutsad", "sad"
+			res := strStr(haystack, needle)
+			convey.So(res, convey.ShouldEqual, 0)
+		})
+		convey.Convey("test-02", func() {
+			haystack, needle := "mississippi","issip"
+			res := strStr(haystack, needle)
+			convey.So(res, convey.ShouldEqual, 4)
+		})
+	})
+}
