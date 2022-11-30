@@ -225,3 +225,20 @@ func TestUnit_longestCommonPrefix(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_reverseList(t *testing.T) {
+	convey.Convey("TestUnit_reverseList", t, func() {
+		convey.Convey("test-01", func() {
+			l2 := &ListNode{
+				Val:  2,
+				Next: nil,
+			}
+			l1 := &ListNode{
+				Val:  1,
+				Next: l2,
+			}
+			res := reverseList(l1)
+			convey.So(res.Val, convey.ShouldEqual, 2)
+		})
+	})
+}
