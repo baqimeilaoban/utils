@@ -242,3 +242,36 @@ func TestUnit_reverseList(t *testing.T) {
 		})
 	})
 }
+
+func TestUnit_mergeTwoLists(t *testing.T) {
+	convey.Convey("TestUnit_mergeTwoLists", t, func() {
+		convey.Convey("test-01", func() {
+			l13 := &ListNode{
+				Val:  4,
+				Next: nil,
+			}
+			l12 := &ListNode{
+				Val:  2,
+				Next: l13,
+			}
+			l11 := &ListNode{
+				Val:  1,
+				Next: l12,
+			}
+			l23 := &ListNode{
+				Val:  4,
+				Next: nil,
+			}
+			l22 := &ListNode{
+				Val:  3,
+				Next: l23,
+			}
+			l21 := &ListNode{
+				Val:  1,
+				Next: l22,
+			}
+			res := mergeTwoLists(l11, l21)
+			convey.So(res.Val, convey.ShouldEqual, 1)
+		})
+	})
+}
